@@ -18,14 +18,14 @@ reminderDueDate: Date= new Date
 
  reminders: Reminder[] = []
 
- addAppointment(){
+ addReminder(){
    if(this.reminderTask.trim().length && this.reminderDueDate) {
-    let newAppointment: Reminder = {
+    let newReminder: Reminder = {
       id: Date.now(),
       task: this.reminderTask,
       dueDate: this.reminderDueDate
     }
-    this.reminders.push(newAppointment)
+    this.reminders.push(newReminder)
 
     this.reminderTask = "";
     this.reminderDueDate = new Date
@@ -34,7 +34,7 @@ reminderDueDate: Date= new Date
    }
  }
 
- deleteAppointment(index: number) {
+ deleteReminder(index: number) {
   this.reminders.splice(index, 1)
   localStorage.setItem("reminders", JSON.stringify(this.reminders))
  }
